@@ -6,7 +6,7 @@
 
 This is tensorflow implementation of the YOLO:Real-Time Object Detection
 
-It can only do predictions using pretrained YOLO_small network for now.
+It can only do predictions using pretrained YOLO_small & YOLO_tiny network for now.
 
 I'm gonna support training later.
 
@@ -17,21 +17,22 @@ Original code(C implementation) & paper : http://pjreddie.com/darknet/yolo/
 ###2.Install
 (1) Download code
 
-(2) Download YOLO_small weight file from
+(2) Download YOLO weight file from
 
-https://drive.google.com/file/d/0B2JbaJSrWLpza08yS2FSUnV2dlE/view?usp=sharing
+YOLO_small : https://drive.google.com/file/d/0B2JbaJSrWLpza08yS2FSUnV2dlE/view?usp=sharing
+YOLO_tiny  : https://drive.google.com/file/d/0B2JbaJSrWLpza0FtQlc3ejhMTTA/view?usp=sharing
 
-(3) Put the 'YOLO_small.ckpt' in the 'weight' folder of downloaded code
+(3) Put the 'YOLO_(version).ckpt' in the 'weight' folder of downloaded code
 
 ###3.Usage
 
 (1) direct usage with default settings (display on console, show output image, no output file writing)
 
-	python YOLO_small_tf.py -fromfile (input image filename)
+	python YOLO_(small or tiny)_tf.py -fromfile (input image filename)
 
 (2) direct usage with custom settings
 
-	python YOLO_small_tf.py argvs
+	python YOLO_(small or tiny)_tf.py argvs
 
 	where argvs are
 
@@ -43,8 +44,8 @@ https://drive.google.com/file/d/0B2JbaJSrWLpza08yS2FSUnV2dlE/view?usp=sharing
 
 (3) import on other scripts
 
-	import YOLO_small_tf
-	yolo = YOLO_small_tf.YOLO_TF()
+	import YOLO_(small or tiny)_tf
+	yolo = YOLO_(small or tiny)_tf.YOLO_TF()
 
 	yolo.disp_console = (True or False, default = True)
 	yolo.imshow = (True or False, default = True)
@@ -66,3 +67,7 @@ https://drive.google.com/file/d/0B2JbaJSrWLpza08yS2FSUnV2dlE/view?usp=sharing
 According to the LICENSE file of the original code, 
 - Me and original author hold no liability for any damages
 - Do not use this on commercial!
+
+###6.Changelog
+2016/02/15 : First upload!
+2016/02/16 : Added YOLO_tiny, Fixed bug that ignores one of the boxes in grid when both boxes detected valid objects
