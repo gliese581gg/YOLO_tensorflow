@@ -1,6 +1,6 @@
 #YOLO_tensorflow
 
-(Version 0.1, Last updated :2016.02.15)
+(Version 0.2, Last updated :2016.02.16)
 
 ###1.Introduction
 
@@ -70,4 +70,5 @@ According to the LICENSE file of the original code,
 
 ###6.Changelog
 2016/02/15 : First upload!
+
 2016/02/16 : Added YOLO_tiny, Fixed bug that ignores one of the boxes in grid when both boxes detected valid objects
