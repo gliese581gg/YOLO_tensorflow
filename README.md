@@ -20,6 +20,7 @@ Original code(C implementation) & paper : http://pjreddie.com/darknet/yolo/
 (2) Download YOLO weight file from
 
 YOLO_small : https://drive.google.com/file/d/0B2JbaJSrWLpza08yS2FSUnV2dlE/view?usp=sharing
+
 YOLO_tiny  : https://drive.google.com/file/d/0B2JbaJSrWLpza0FtQlc3ejhMTTA/view?usp=sharing
 
 (3) Put the 'YOLO_(version).ckpt' in the 'weight' folder of downloaded code
