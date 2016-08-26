@@ -73,3 +73,5 @@ According to the LICENSE file of the original code,
 2016/02/15 : First upload!
 
 2016/02/16 : Added YOLO_tiny, Fixed bug that ignores one of the boxes in grid when both boxes detected valid objects
+
+2016/08/26 : Uploaded weight file converter! (darknet weight -> tensorflow ckpt)
