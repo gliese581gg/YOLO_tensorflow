@@ -25,7 +25,7 @@ YOLO_small : https://drive.google.com/file/d/0B2JbaJSrWLpza08yS2FSUnV2dlE/view?u
 
 YOLO_tiny  : https://drive.google.com/file/d/0B2JbaJSrWLpza0FtQlc3ejhMTTA/view?usp=sharing
 
-YOLO_face : https://drive.google.com/file/d/0B2JbaJSrWLpzWFFnczYyTkcxSUE/view?usp=sharing
+YOLO_face : https://drive.google.com/file/d/0B2JbaJSrWLpzMzR5eURGN2dMTk0/view?usp=sharing
 
 Warning!! : YOLO_small and YOLO_tiny cannot be used in Tensorflow v0.12. YOLO_face can only be used in TF v0.12
 
