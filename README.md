@@ -1,6 +1,6 @@
 #YOLO_tensorflow
 
-(Version 0.2, Last updated :2016.02.16)
+(Version 0.3, Last updated :2017.02.21)
 
 ###1.Introduction
 
@@ -8,9 +8,11 @@ This is tensorflow implementation of the YOLO:Real-Time Object Detection
 
 It can only do predictions using pretrained YOLO_small & YOLO_tiny network for now.
 
-I'm gonna support training later.
+(+ YOLO_face detector from https://github.com/quanhua92/darknet )
 
 I extracted weight values from darknet's (.weight) files.
+
+My code does not support training. Use darknet for training.
 
 Original code(C implementation) & paper : http://pjreddie.com/darknet/yolo/
 
@@ -22,6 +24,8 @@ Original code(C implementation) & paper : http://pjreddie.com/darknet/yolo/
 YOLO_small : https://drive.google.com/file/d/0B2JbaJSrWLpza08yS2FSUnV2dlE/view?usp=sharing
 
 YOLO_tiny  : https://drive.google.com/file/d/0B2JbaJSrWLpza0FtQlc3ejhMTTA/view?usp=sharing
+
+YOLO_face : https://drive.google.com/file/d/0B2JbaJSrWLpzWFFnczYyTkcxSUE/view?usp=sharing
 
 (3) Put the 'YOLO_(version).ckpt' in the 'weight' folder of downloaded code
 
@@ -75,3 +79,5 @@ According to the LICENSE file of the original code,
 2016/02/16 : Added YOLO_tiny, Fixed bug that ignores one of the boxes in grid when both boxes detected valid objects
 
 2016/08/26 : Uploaded weight file converter! (darknet weight -> tensorflow ckpt)
+
+2017/02/21 : Added YOLO_face (Thanks https://github.com/quanhua92/darknet)
