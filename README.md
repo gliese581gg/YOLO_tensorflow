@@ -27,10 +27,6 @@ YOLO_tiny  : https://drive.google.com/file/d/0B2JbaJSrWLpza0FtQlc3ejhMTTA/view?u
 
 YOLO_face : https://drive.google.com/file/d/0B2JbaJSrWLpzMzR5eURGN2dMTk0/view?usp=sharing
 
-Warning!! : YOLO_small and YOLO_tiny cannot be used in Tensorflow v0.12. YOLO_face can only be used in TF v0.12
-
-I will upload YOLO_small and YOLO_tiny for latest tensorflow soon:D
-
 (3) Put the 'YOLO_(version).ckpt' in the 'weight' folder of downloaded code
 
 ###3.Usage
