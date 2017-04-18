@@ -1,8 +1,8 @@
-#YOLO_tensorflow
+# YOLO_tensorflow
 
 (Version 0.3, Last updated :2017.02.21)
 
-###1.Introduction
+### 1.Introduction
 
 This is tensorflow implementation of the YOLO:Real-Time Object Detection
 
@@ -16,7 +16,7 @@ My code does not support training. Use darknet for training.
 
 Original code(C implementation) & paper : http://pjreddie.com/darknet/yolo/
 
-###2.Install
+### 2.Install
 (1) Download code
 
 (2) Download YOLO weight file from
@@ -29,7 +29,7 @@ YOLO_face : https://drive.google.com/file/d/0B2JbaJSrWLpzMzR5eURGN2dMTk0/view?us
 
 (3) Put the 'YOLO_(version).ckpt' in the 'weight' folder of downloaded code
 
-###3.Usage
+### 3.Usage
 
 (1) direct usage with default settings (display on console, show output image, no output file writing)
 
@@ -62,18 +62,18 @@ YOLO_face : https://drive.google.com/file/d/0B2JbaJSrWLpzMzR5eURGN2dMTk0/view?us
 	yolo.detect_from_file(filename)
 	yolo.detect_from_cvmat(cvmat)
 
-###4.Requirements
+### 4.Requirements
 
 - Tensorflow
 - Opencv2
 
-###5.Copyright
+### 5.Copyright
 
 According to the LICENSE file of the original code, 
 - Me and original author hold no liability for any damages
 - Do not use this on commercial!
 
-###6.Changelog
+### 6.Changelog
 2016/02/15 : First upload!
 
 2016/02/16 : Added YOLO_tiny, Fixed bug that ignores one of the boxes in grid when both boxes detected valid objects
