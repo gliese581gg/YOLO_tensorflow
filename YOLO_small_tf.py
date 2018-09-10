@@ -220,11 +220,13 @@ class YOLO_TF:
 		img_cp = img.copy()
 		if self.filewrite_txt :
 			ftxt = open(self.tofile_txt,'w')
+		class_results_set = set()
 		for i in range(len(results)):
 			x = int(results[i][1])
 			y = int(results[i][2])
 			w = int(results[i][3])//2
 			h = int(results[i][4])//2
+			class_results_set.add(results[i][0])
 			if self.disp_console : print '    class : ' + results[i][0] + ' , [x,y,w,h]=[' + str(x) + ',' + str(y) + ',' + str(int(results[i][3])) + ',' + str(int(results[i][4]))+'], Confidence = ' + str(results[i][5])
 			if self.filewrite_img or self.imshow:
 				cv2.rectangle(img_cp,(x-w,y-h),(x+w,y+h),(0,255,0),2)
@@ -232,9 +234,17 @@ class YOLO_TF:
 				cv2.putText(img_cp,results[i][0] + ' : %.2f' % results[i][5],(x-w+5,y-h-7),cv2.FONT_HERSHEY_SIMPLEX,0.5,(0,0,0),1)
 			if self.filewrite_txt :				
 				ftxt.write(results[i][0] + ',' + str(x) + ',' + str(y) + ',' + str(w) + ',' + str(h)+',' + str(results[i][5]) + '\n')
+		if "person" in class_results_set:
+			self.detected+=1
+			# new_img_path=self.fromfolder[:-14]+"test7/selected_ImageNet_person/"+str(self.detected)+"_white_margin_orgin_pic.jpg"
+			# cv2.imwrite(new_img_path,img_cp)
 		if self.filewrite_img : 
 			if self.disp_console : print '    image file writed : ' + self.tofile_img
-			cv2.imwrite(self.tofile_img,img_cp)			
+			is_saved = cv2.imwrite(self.tofile_img,img_cp)
+			if is_saved == True:
+				print("Saved under:",self.tofile_img)
+			else:
+				print("Saving error!s")	
 		if self.imshow :
 			cv2.imshow('YOLO_small detection',img_cp)
 			cv2.waitKey(1)

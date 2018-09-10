@@ -230,7 +230,11 @@ class YOLO_TF:
 			# cv2.imwrite(new_img_path,img_cp)
 		if self.filewrite_img : 
 			if self.disp_console : print '    image file writed : ' + self.tofile_img
-			cv2.imwrite(self.tofile_img,img_cp)			
+			is_saved = cv2.imwrite(self.tofile_img,img_cp)
+			if is_saved == True:
+				print("Saved under:",self.tofile_img)
+			else:
+				print("Saving error!s")
 		if self.imshow :
 			cv2.imshow('YOLO_tiny detection',img_cp)
 			cv2.waitKey(1)
