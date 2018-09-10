@@ -3,6 +3,7 @@ import tensorflow as tf
 import cv2
 import time
 import sys
+import os
 
 class YOLO_TF:
 	fromfile = None
@@ -25,12 +26,25 @@ class YOLO_TF:
 	h_img = 480
 
 	def __init__(self,argvs = []):
+		self.detected = 0
+		self.overall_pics = 0
 		self.argv_parser(argvs)
 		self.build_networks()
 		if self.fromfile is not None: self.detect_from_file(self.fromfile)
+		if self.fromfolder is not None:
+			filename_list = os.listdir(self.fromfolder)
+			for filename in filename_list:
+				self.overall_pics+=1
+				self.detect_from_file(self.fromfolder+"/"+filename)
+			print("Fooling_rate:",(self.overall_pics-self.detected)/self.overall_pics)
+
 	def argv_parser(self,argvs):
 		for i in range(1,len(argvs),2):
 			if argvs[i] == '-fromfile' : self.fromfile = argvs[i+1]
+			if argvs[i] == '-fromfolder' : 
+				self.fromfolder = argvs[i+1]
+			else:
+				self.fromfolder = None
 			if argvs[i] == '-tofile_img' : self.tofile_img = argvs[i+1] ; self.filewrite_img = True
 			if argvs[i] == '-tofile_txt' : self.tofile_txt = argvs[i+1] ; self.filewrite_txt = True
 			if argvs[i] == '-imshow' :
